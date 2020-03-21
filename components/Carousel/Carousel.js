@@ -45,6 +45,8 @@ const Carousel = () => {
 
   const images = carousel.querySelectorAll('img');
   let index = 0;
+  images.forEach(image => image.style.opacity = 0);
+  gsap.to(mountains, { opacity: 1, duration: 2 });
 
   leftButton.addEventListener('click', () => {
     hideImage(images[index]);
@@ -68,11 +70,16 @@ const Carousel = () => {
 }
 
 const hideImage = (img) => {
-  img.style.display = 'none';
+  gsap.to(img, {opacity: 0, duration: 1 });
+  setTimeout(() => img.style.display = 'none', 1000);
+
 }
 
 const showImage = (img) => {
-  img.style.display = 'block';
+  setTimeout(() => {
+    img.style.display = 'block';
+    gsap.to(img, { opacity: 1, duration: 1 });
+  }, 1000);
 }
 
 document.querySelector('.carousel-container').appendChild(Carousel());
