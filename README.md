@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+The DOM stands for document object model. It is an API provided by the browser that acts as a bridge between the browser and our code. It allows us to manipulate the content, structure and style on a webpage using JavaScript.
+
 2. What is an event?
+
+Events are "things" that happen to HTML elements. They can be something the user does, or something the browser does.  Some examples of events are when a page finishes loading, when the user inputs text into a field on the page, when the user hovers over an element, and when a user clicks a button.
 
 3. What is an event listener?
 
+An event listener is a piece of code that is called whenever that particular event occurs.
+
 4. Why would we convert a NodeList into an Array?
 
+One reason we would convert a NodeList into an Array is so that we have access to all of JavaScript's built-in array methods.  NodeList has only a forEach() method for working with its elements.  The JavaScript array library has many other methods.
+
 5. What is a component?
+
+A component is a section of reusable code that we create to keep our code DRY and help make development easier/faster.
 
 ### Git Set up
 
