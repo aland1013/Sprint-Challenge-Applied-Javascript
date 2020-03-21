@@ -40,7 +40,6 @@ const Carousel = () => {
 
   mountains.style.display = 'block';
 
-
   carousel.append(leftButton, mountains, computer, trees, turntable, rightButton);
 
   const images = carousel.querySelectorAll('img');
