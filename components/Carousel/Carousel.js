@@ -17,3 +17,62 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+const Carousel = () => {
+  const carousel = document.createElement('div');
+  const leftButton = document.createElement('div');
+  const mountains = document.createElement('img');
+  const computer = document.createElement('img');
+  const trees = document.createElement('img');
+  const turntable = document.createElement('img');
+  const rightButton = document.createElement('div');
+
+  carousel.classList.add('carousel');
+  leftButton.classList.add('left-button');
+  rightButton.classList.add('right-button');
+
+  leftButton.textContent = ' < ';
+  rightButton.textContent = ' > ';
+  mountains.src = '../assets/carousel/mountains.jpeg';
+  computer.src = '../assets/carousel/computer.jpeg';
+  trees.src = '../assets/carousel/trees.jpeg';
+  turntable.src = '../assets/carousel/turntable.jpeg';
+
+  mountains.style.display = 'block';
+
+
+  carousel.append(leftButton, mountains, computer, trees, turntable, rightButton);
+
+  const images = carousel.querySelectorAll('img');
+  let index = 0;
+
+  leftButton.addEventListener('click', () => {
+    hideImage(images[index]);
+    
+    index--;
+    if (index < 0) index = 3;
+    
+    showImage(images[index]);
+  });
+
+  rightButton.addEventListener('click', () => {
+    hideImage(images[index]);
+    
+    index++;
+    if (index > 3) index = 0;
+    
+    showImage(images[index]);
+  });
+
+  return carousel;
+}
+
+const hideImage = (img) => {
+  img.style.display = 'none';
+}
+
+const showImage = (img) => {
+  img.style.display = 'block';
+}
+
+document.querySelector('.carousel-container').appendChild(Carousel());
